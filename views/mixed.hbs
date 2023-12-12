@@ -1,0 +1,29 @@
+<div class="bg-menu-theme p-5" data-bg-class="bg-menu-theme">
+  <canvas id="mixedChart"></canvas>
+</div>
+
+<script>
+  new Chart("mixedChart", {
+    data: {
+        labels: ['January', 'February', 'March', 'April'],
+        datasets: [ 
+            {
+                type: 'line',
+                label: 'Line Dataset',
+                data: [5, 25, 10, 50],
+                borderColor: "blue",
+                borderWidth: 1,
+            },
+            {
+                type: 'bar',
+                label: 'Bar Dataset',
+                data: [10, 20, 30, 40],
+                backgroundColor: "rgba(255, 68, 111, 0.2)",
+                borderColor: "rgb(255, 68, 111)",
+                borderWidth: 1,
+            },
+        ],
+    },
+    options: {}
+});
+</script>

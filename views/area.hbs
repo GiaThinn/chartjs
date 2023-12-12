@@ -1,0 +1,51 @@
+<div class="bg-menu-theme p-5" data-bg-class="bg-menu-theme">
+  <canvas id="areaChart"></canvas>
+</div>
+
+<script>
+    // Sample data with 2 datasets
+    var data = {
+      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
+      datasets: [{
+        label: 'Dataset 1',
+        data: [20, 30, 25, 40, 15],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)', // Adjust color as needed
+        borderColor: 'rgba(75, 192, 192, 1)', // Adjust color as needed
+        borderWidth: 2,
+        fill: true,
+      },
+      {
+        label: 'Dataset 2',
+        data: [10, 25, 18, 35, 20],
+        backgroundColor: 'rgba(255, 99, 132, 0.6)', // Adjust color as needed
+        borderColor: 'rgba(255, 99, 132, 1)', // Adjust color as needed
+        borderWidth: 2,
+        fill: true,
+      }]
+    };
+
+    // Chart configuration
+    var options = {
+      responsive: true,
+      scales: {
+        x: {
+          type: 'category',
+          labels: data.labels,
+        },
+        y: {
+          type: 'linear',
+          position: 'left',
+        }
+      }
+    };
+
+    // Get the canvas element
+    var ctx = document.getElementById('areaChart').getContext('2d');
+
+    // Create the area chart
+    var areaChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: options
+    });
+  </script>

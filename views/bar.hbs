@@ -1,0 +1,56 @@
+<div class="bg-menu-theme p-5" data-bg-class="bg-menu-theme">
+  <canvas id="barChart"></canvas>
+</div>
+
+<script>
+  const barChart = document.getElementById("barChart");
+
+  new Chart(barChart, {
+    type: 'bar',
+    data: {
+      labels: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+      datasets: [{
+        label: "My dataset",
+        data: [55, 52, 48, 43, 45, 49, 52, 55, 58],
+        backgroundColor: "rgba(255, 144, 111, 0.2)",
+        borderColor: "rgb(255, 144, 111)",
+        borderWidth: 1,
+      }]
+    },
+    options: {
+      scales: {
+        x: {
+          title:{
+            display: true,
+            text: "Year",
+            font: {
+              size: 20,
+            }
+          }
+        },
+        y: {
+          title:{
+            display: true,
+            text: "Number of police officers",
+            font: {
+              size: 20,
+            }
+          }
+        }
+      },
+
+      plugins: {
+        title: {
+          display: true,
+          text: "the number of police officers in Crimeville for each year from 2011 to 2019",
+          font: {
+            family: "san-serif",
+            color: "blue",
+            size: 32,
+          }
+        }
+      }
+    }
+  })
+</script>
+

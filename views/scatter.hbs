@@ -1,0 +1,51 @@
+<div class="bg-menu-theme p-5" data-bg-class="bg-menu-theme">
+    <h1>Scatter</h1>
+  <canvas id="scatterChart"></canvas>
+</div>
+
+<script>
+    // Sample data with 10 points
+    var data = {
+      datasets: [{
+        label: 'Scatter Chart Demo',
+        data: [
+          { x: 5, y: 10 },
+          { x: 10, y: 15 },
+          { x: 15, y: 5 },
+          { x: 20, y: 8 },
+          { x: 25, y: 18 },
+          { x: 30, y: 12 },
+          { x: 35, y: 7 },
+          { x: 40, y: 20 },
+          { x: 45, y: 15 },
+          { x: 50, y: 10 },
+        ],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)', // Adjust color as needed
+      }]
+    };
+
+    // Chart configuration
+    var options = {
+      responsive: true,
+      scales: {
+        x: {
+          type: 'linear',
+          position: 'bottom'
+        },
+        y: {
+          type: 'linear',
+          position: 'left'
+        }
+      }
+    };
+
+    // Get the canvas element
+    var ctx = document.getElementById('scatterChart').getContext('2d');
+
+    // Create the scatter chart
+    var scatterChart = new Chart(ctx, {
+      type: 'scatter',
+      data: data,
+      options: options
+    });
+  </script>

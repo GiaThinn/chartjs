@@ -1,0 +1,45 @@
+<div class="bg-menu-theme p-5" data-bg-class="bg-menu-theme">
+  <canvas id="radarChart"></canvas>
+</div>
+
+<script>
+    // Sample data with 10 labels and random values
+    var data = {
+      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6', 'Label 7', 'Label 8', 'Label 9', 'Label 10'],
+      datasets: [{
+        label: 'Radar Chart Demo',
+        data: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)', // Adjust color as needed
+        borderColor: 'rgba(75, 192, 192, 1)', // Adjust color as needed
+        borderWidth: 2,
+        pointRadius: 5,
+      }]
+    };
+
+    // Chart configuration
+    var options = {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+        }
+      },
+      scales: {
+        r: {
+          suggestedMin: 0,
+          suggestedMax: 100
+        }
+      }
+    };
+
+    // Get the canvas element
+    var ctx = document.getElementById('radarChart').getContext('2d');
+
+    // Create the radar chart
+    var radarChart = new Chart(ctx, {
+      type: 'radar',
+      data: data,
+      options: options
+    });
+  </script>

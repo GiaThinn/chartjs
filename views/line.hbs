@@ -1,0 +1,53 @@
+<div class="bg-menu-theme p-5" data-bg-class="bg-menu-theme">
+  <canvas id="lineChart"></canvas>
+</div>
+
+<button onclick="destroy()">Destroy</button>
+<button onclick="update()">Update</button>
+
+<script>
+  const lineChart = document.getElementById("lineChart");
+
+  const myChart = new Chart(lineChart,{
+    type: 'line',
+    data: {
+      labels: [2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      datasets: [
+      {
+        label: "Men",
+        data: [150, 165, 177.5, 155, 162.5, 175, 195],
+        borderColor: "blue",
+        borderWidth: 1,
+        pointStyle: 'triangle',
+      },
+      {
+        label: "Woman",
+        data: [147.5, 157.5, 160, 177.5, 182.5, 180, 187.5],
+        borderColor: "red",
+        borderWidth: 1,
+        pointStyle: 'rect',
+      },
+      {
+        label: "Both genders",
+        data: [297.5, 332.5, 337.5, 332.5, 345, 355, 382.5],
+        borderColor: "black",
+        borderWidth: 1,
+        pointStyle: 'circle',
+        fill: true,
+        tension: 0.3,
+      }
+      ]
+    },
+    options:{}
+  })
+
+  function destroy(){
+    myChart.destroy();
+  }
+
+  function update(){
+    myChart.data.datasets[0].data[2] = 100;
+    myChart.update();
+  }
+
+</script>

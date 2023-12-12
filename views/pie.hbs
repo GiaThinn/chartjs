@@ -1,0 +1,24 @@
+<div class="bg-menu-theme p-5" data-bg-class="bg-menu-theme">
+  <canvas id="pieChart"></canvas>
+</div>
+
+<script>
+  const pieChart = document.getElementById("pieChart");
+
+  new Chart(pieChart, {
+    type: 'doughnut',
+    data: {
+      labels: ['Type 1', 'Type 2', 'Type 3'],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [300, 50, 100],
+        backgroundColor: ['rgb(255, 99, 132)', 'rgb(53, 106, 246)', 'rgb(255, 68, 193)'] ,
+        hoverOffset: 10,
+      }]
+    },
+    options: {
+      
+    }
+  })
+</script>
+
